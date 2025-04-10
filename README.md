@@ -6,18 +6,35 @@
 
 1. Клонируйте репозиторий
 
-        https:/
+        git clone https://github.com/VaDKo61/Exchanger
 
-2. Установите зависимости
+2. Запустите контейнер в Docker
 
-        pip install -r requirements.txt
+        docker compose up --build
 
-4. Перейдите в дирректорию
+3. Запустите миграцию
 
-        cd
+        docker compose exec exchanger python manage.py migrate
 
-5. Запустите сервер
+4. Создайте суперюзера
 
-        python manage.py runserver
+        docker compose exec exchanger python manage.py createsuperuser
+
+5. Авторизуйтесь по ссылке 
+
+        http://127.0.0.1:8000/admin
+
+6. Документаци API
+
+        http://127.0.0.1:8000/swagger/
+
+7. Запуск тестов
+
+         cd .\exchanger\
+         python manage.py test
+         
+
+
+        
 
 
