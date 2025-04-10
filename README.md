@@ -9,11 +9,13 @@
         git clone https://github.com/VaDKo61/Exchanger
 
 2. Запустите контейнер в Docker
-
+    
+        cd .\Exchanger\
         docker compose up --build
 
 3. Запустите миграцию
 
+        cd .\Exchanger\
         docker compose exec exchanger python manage.py migrate
 
 4. Создайте суперюзера
@@ -31,6 +33,7 @@
 7. Запуск тестов
 
          cd .\exchanger\
+         pip install -r requirements.txt
          python manage.py test
          
 
